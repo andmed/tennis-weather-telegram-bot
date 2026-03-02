@@ -1,6 +1,7 @@
 # weather_bot.py
 # Requirements: pip install python-telegram-bot requests
 
+import os
 import requests
 from datetime import datetime
 from collections import defaultdict
