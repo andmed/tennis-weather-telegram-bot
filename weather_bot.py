@@ -3,7 +3,7 @@
 
 import os
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 from collections import defaultdict
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -38,7 +38,7 @@ def get_weekly_weather(city: str) -> str:
         days[date_str]["descriptions"].append(entry["weather"][0]["description"])
 
     lines = [f"🌍 *Weekly Weather — {city}*\n"]
-    today = datetime.now(datetime.UTC).date()
+    today = datetime.now(timezone.utc).date()
 
     for date_str, info in sorted(days.items())[:7]:
         date_obj  = datetime.strptime(date_str, "%Y-%m-%d").date()
