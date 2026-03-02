@@ -38,7 +38,7 @@ def get_weekly_weather(city: str) -> str:
         days[date_str]["descriptions"].append(entry["weather"][0]["description"])
 
     lines = [f"🌍 *Weekly Weather — {city}*\n"]
-    today = datetime.utcnow().date()
+    today = datetime.now(datetime.UTC).date()
 
     for date_str, info in sorted(days.items())[:7]:
         date_obj  = datetime.strptime(date_str, "%Y-%m-%d").date()
