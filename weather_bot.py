@@ -8,8 +8,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-TELEGRAM_TOKEN = "$TELEGRAM_TOKEN"
-WEATHER_API_KEY = "$WEATHER_API_KEY"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
 DEFAULT_CITY = "Ypsonas,CY"   # your default city
 # ─────────────────────────────────────────────────────────────────────────────
 
